@@ -13,6 +13,6 @@ class ProductListView(ListView):
         queryset = Product.objects.all()
         if 'query' in self.request.GET:
             qs = self.request.GET['query']
-            queryset = queryset.filter(name_contains=qs)
+            queryset = queryset.filter(name__contains=qs)
         return queryset
 
